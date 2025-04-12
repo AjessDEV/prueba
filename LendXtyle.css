@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'CabinetGrotesk-Variable';
   src: url('/fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
     url('/fonts/CabinetGrotesk-Variable.woff') format('woff'),
@@ -6,7 +6,9 @@
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-}
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 .colored-text {
   color: var(--mainColor);
@@ -17,7 +19,7 @@
 }
 
 * {
-  font-family: 'CabinetGrotesk-Variable', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
