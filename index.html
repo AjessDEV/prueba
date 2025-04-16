@@ -14,9 +14,9 @@
     <nav class="navbar">
       <a href="#" class="nav-logo">Lend<b class="colored-text" style="font-weight: 900;">X</b></a>
 
-      <button class="deploy-menu-btn">
-        <i class="ti ti-square-rounded-arrow-down-filled"></i>
-        
+      <button class="deploy-menu-btn" id="deploy-menu-btn">
+        <i class="ti ti-menu-4"></i>
+          
         <ul class="m-nav-list">
           <li class="m-nav-list-item"><a href="#" class="m-nav-link">Conócenos</a></li>
           <li class="m-nav-list-item"><a href="#" class="m-nav-link">Servicios</a></li>
@@ -117,12 +117,12 @@
           <h3 class="serv-title">Landing Page</h3>
           <p class="serv-desc">Pagina Web de Presentación perfecto para Emprendedores y Negocios que quieren tener
             presencia online de manera profesional.</p>
-          <h2 class="serv-price"><b class="serv-price-symbols">$</b class="serv-price-symbols">289<b
+          <h2 class="serv-price"><b class="serv-price-symbols">US$</b class="serv-price-symbols">289<b
               class="serv-price-symbols">.00</b class="serv-price-symbols"></h2>
           <h3 class="serv-sub-title">Incluye:</h3>
           <br>
           <ul class="serv-list">
-            <li class="serv-list-item">Hasta 3 Secciones (Inicio, Servicios, Contacto u otras).</li>
+            <li class="serv-list-item">Hasta 3 Secciones.</li>
             <li class="serv-list-item">Diseño Moderno y Personalizado según tu marca.</li>
             <li class="serv-list-item">Formulario Avanzado de Contacto con conexión con Whatsapp o Email.</li>
             <li class="serv-list-item">Optimización SEO (Optimización para Motores de Busqueda).</li>
@@ -139,7 +139,7 @@
           <h3 class="serv-title">Sitio Web</h3>
           <p class="serv-desc">Pagina Web Completa, la solución ideal para Negocios consolidados que necesitan mayor
             contenido y estructura.</p>
-          <h2 class="serv-price"><b class="serv-price-symbols">$</b class="serv-price-symbols">499<b
+          <h2 class="serv-price"><b class="serv-price-symbols">US$</b class="serv-price-symbols">499<b
               class="serv-price-symbols">.00</b class="serv-price-symbols"></h2>
           <h3 class="serv-sub-title">Incluye:</h3>
           <br>
@@ -184,7 +184,7 @@
                 regularmente, para que puedas recuperar tu página en caso de cualquier inconveniente.</li>
             </ul>
             <h2 class="serv2-price">
-              <div><b class="serv2-price-symbols">$</b class="serv2-price-symbols">29<b class="serv2-price-symbols">.00/<b
+              <div><b class="serv2-price-symbols">US$</b class="serv2-price-symbols">29<b class="serv2-price-symbols">.00/<b
                     class="colored-text">mes</b></b class="serv2-price-symbols"></div>
               <a href="#" class="serv2-btn">Contratar Servicio</a>
             </h2>
@@ -284,7 +284,7 @@
 
         <div class="contact-form">
           <h2>Formulario de Contacto</h2>
-          <form action="#">
+          <form action="#" id="contact-form">
 
             <div class="form-section1">
               <div class="form-name">
@@ -293,7 +293,7 @@
               </div>
 
               <div class="form-email">
-                <label for="email">Correo Electronico</label><br>
+                <label for="email">Correo Electrónico</label><br>
                 <input autocomplete="none" type="email" name="email" id="email" required
                   placeholder="Ej. correo@email.com">
               </div>
@@ -306,12 +306,38 @@
                 placeholder="Cuéntanos sobre tu Proyecto......"></textarea>
             </div>
 
-            <button class="form-btn" type="submit">Enviar Mensaje <i class="ti ti-send"></i></button>
+            <button class="form-btn" type="submit" id="contact-form-btn">Enviar Mensaje <i class="ti ti-send"></i></button>
           </form>
         </div>
       </div>
     </section>
   </main>
+
+  <div class="form-message-loading">
+    <div class="loader"></div>
+    <div class="form-message">
+      <h3>Enviando...</h3>
+      <p>Este proceso puede tardar unos segundos.</p>
+    </div>
+  </div>
+  <div class="form-message-success">
+    <div class="success-icon"><i class="ti ti-square-rounded-check-filled"></i></div>
+    <div class="success-text">
+      <h3>Listo!</h3>
+      <p>Tu Solicitud se envió correctamente.</p>
+    </div>
+    <button class="success-btn" id="success-btn">OK</button>
+  </div>
+  <div class="form-message-error">
+    <div class="error-icon"><i class="ti ti-alert-triangle-filled"></i></div>
+    <div class="error-text">
+      <h3>Oh no!</h3>
+      <p>Parece que hubo error, intenta de nuevo.</p>
+      <p class="error-help">Si el error persiste, puedes enviar tu solicitud a: <b>lendxweb@protonmail.com</b></p>
+    </div>
+    <button class="error-btn" id="error-btn">OK</button>
+  </div>
+
   <footer>
     <div class="footer-logo-container">
       <a class="f-logo" href="#">Lend<b class="colored-text">X</b></a>
@@ -337,6 +363,17 @@
 
     <a href="#" class="f-cta-btn">Contratar Servicio <i class="ti ti-contract colored-text"></i></a>
   </footer>
+
+<script src="LendXapp.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init({
+      publicKey: "3lnQfRKVcIz26U7Et",
+    });
+  })();
+</script>
 </body>
 
 </html>
