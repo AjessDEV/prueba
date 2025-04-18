@@ -25,9 +25,6 @@ alertErrorBtn.addEventListener('click', () => {
 
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault()
-})
-
-contFormBtn.addEventListener('click', () => {
   alertSending.classList.add('form-message-loading_active')
 
   const cParams = {
