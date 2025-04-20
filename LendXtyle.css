@@ -14,7 +14,7 @@
   margin: 0;
   box-sizing: border-box;
   --mainColor: #26ce6c;
-  --secundaryColor: #222c27;
+  --secundaryColor: #1c3428;
   scroll-behavior: smooth;
 }
 
@@ -397,13 +397,13 @@ body {
 }
 
 .serv-desc {
-  color: #222c27;
+  color: var(--secundaryColor);
   font-weight: 600;
   font-size: 18px;
 }
 
 .serv-price {
-  color: #222c27;
+  color: var(--secundaryColor);
   font-weight: 800;
   font-size: 70px;
   text-align: end;
@@ -494,7 +494,7 @@ body {
 }
 
 .most-popular::after {
-  content: 'Más Popular';
+  content: 'Popular';
   position: absolute;
   top: -70px;
   font-size: 30px;
@@ -1912,8 +1912,7 @@ input:focus::placeholder {
   color: #1b1b1bd6;
 }
 
-.extra-service>label>i::after {
-  content: 'Con este Servicio aseguras un optimo funcionamiento para tu Página Web y la posibilidad de hacer cambios o actualizaciones en el futuro sin cargo alguno.';
+.extra-service-info {
   position: absolute;
   color: #eeeeee;
   background-color: #1b1b1b;
@@ -1922,16 +1921,18 @@ input:focus::placeholder {
   font-size: 13px;
   width: 150px;
   line-height: 20px;
-  margin-left: 15px;
   border-radius: 10px;
   filter: opacity(0);
   transition: ease 200ms;
   pointer-events: none;
+  top: 0;
+  left: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.extra-service>label>i:hover::after {
+.extra-service > label > i:hover .extra-service-info {
   filter: opacity(1);
-  margin-left: 7px;
+  left: 25px;
 }
 
 .imp-info {
@@ -2258,17 +2259,18 @@ input:focus::placeholder {
     font-size: 18px;
   }
 
-  .extra-service>label>i::after {
+  .extra-service-info {
     font-size: 15px;
-    margin-left: 0;
-    left: -150px;
-    bottom: 150%;
+    left: -140px;
+    top: -230px;
+    width: 200px;
+    height: 180px;
   }
 
-  .extra-service>label>i:hover::after {
+  .extra-service>label>i:hover .extra-service-info {
     filter: opacity(1);
-    margin-left: 0;
-    bottom: 130%;
+    left: -140px;
+    top: -190px;
   }
 
   .imp-info {

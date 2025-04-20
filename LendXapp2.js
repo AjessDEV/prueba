@@ -43,7 +43,7 @@ dropdowns.forEach(dropdown => {
       const hsService = document.getElementById('hs-service') ? document.getElementById('hs-service').innerText.trim() : ''
       const hsPaymentMethod = document.getElementById('hs-payment') ? document.getElementById('hs-payment').innerText.trim() : ''
 
-      const defaultValues = ['Selecciona tu País', 'Select your Country', 'Selecciona el Servicio', 'Select a Service',
+      const defaultValues = ['Selecciona tu País', 'Select your Country', 'Selecciona el Servicio', 'Choose a Service',
         'Elige un Método de Pago', 'Choose a Payment Method'
       ]
 
@@ -82,7 +82,11 @@ const extraCheckbox = document.getElementById('extra-service')
 const extraservValue = document.getElementById('extraserv-value')
 
 extraCheckbox.addEventListener('change', () => {
-  extraservValue.textContent = (extraCheckbox.checked ? 'Si' : 'No')
+  const lang = document.documentElement.lang;
+  const yesText = lang === 'es' ? 'Sí' : 'Yes'
+  const notext = lang === 'en' ? 'No' : 'No'
+
+  extraservValue.textContent = (extraCheckbox.checked ? yesText : notext)
 })
 
 
